@@ -1,0 +1,31 @@
+
+<figure class="{{ if .Get "class" }}{{ index .Params "class" }}{{else}}attempt-left{{ end }}">
+<img loading=lazy src="{{ .Get "src" }}" {{ if or ( .Get "alt") ( .Get "caption") }}alt="{{ if .Get "alt"}}{{ index .Params "alt"}}{{else}}{{ index .Params "caption" }}{{ end }}"{{ end }} width="{{ if .Get "width"}}{{ index .Params "width" }}{{else}}428{{end}}" />
+{{ if .Get "caption" }}<figcaption><h4 {{ if .Get "classcaption" }}class="{{ index .Params "classcaption" }}"{{end}}> {{ index .Params "caption" }}</h4>
+</figcaption >
+{{ end }}
+</figure>
+
+
+{{/* {{<figureL src="" alt="" class="" width=" height=" caption="" link="" attr=""
+<!-- image -->
+
+<figure class="fl mt4 mr4 mb4 {{ if .Get "class" }}{{ index .Params "class" }}{{ end }}">
+    {{ if .Get "link"}}<a href="{{ index "link"}}">{{ end }}
+        <img loading src="{{ index .Params "src" }}" {{ if or ( .Get "alt") ( .Get .Params "caption") }}alt="{{ if .Get .Params "alt"}}{{ index .Params "alt"}}{{else}}{{ index .Params "caption" }}{{ end }}"{{ end }} />
+    {{ if .Get "link"}}</a>{{ end }}
+    {{ if or (or (isset .Params "title") (isset .Params "caption")) (isset .Params "attr")}}
+    <figcaption>{{ if isset .Params "title" }}
+        <h4 class="">{{ index .Params "title" }}</h4>{{ end }}
+        {{ if or (isset .Params "caption") (isset .Params "attr")}}<p>
+        {{ index .Params "caption" }}
+        {{ if isset .Params "attrlink"}}<a href="{{ index .Params "attrlink"}}"> {{ end }}
+            {{ index .Params "attr" }}
+        {{ if isset .Params "attrlink"}}</a> {{ end }}
+        </p> {{ end }}
+    </figcaption>
+    {{ end }}
+</figure>
+<!-- image -->
+
+>}} */}}

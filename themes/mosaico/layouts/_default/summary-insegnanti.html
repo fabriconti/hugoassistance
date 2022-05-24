@@ -1,0 +1,24 @@
+<!-- summary-insegnanti-->
+<!-- old page-content mb0 bg-near-black nested-copy-line-height -->
+<div class="teachers-box">
+  <a href="{{ .RelPermalink }}" class="teachers-box-link" title="{{ .Title }}">
+    <h2 class="teachers-box-title">
+      {{ .Title }}
+    </h2>
+    <div class="teachers-box-text">
+      {{ if .Params.featured_image }}
+      <div class="w5-ns center mb2">
+        <div class="aspect-ratio aspect-ratio--16x9">
+          <div class="aspect-ratio--object cover grow" style="background:url({{ .RelPermalink }}{{ .Params.featured_image }}) center;">
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    {{ .Summary }}
+    </div>
+  </a>
+  <a class="teachers-box-button"
+    href="{{ .RelPermalink }}">scopri di più
+  </a>
+
+</div>

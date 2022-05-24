@@ -1,0 +1,24 @@
+<!-- summary -->
+<div class="">
+  <div class="summary-box">
+    <a href="{{ .RelPermalink }}" class="link gold ">
+      <h2 class="f4 mt0 link">
+        {{ .Title }}
+      </h2>
+      <div class="nested-links f5 lh-copy nested-copy-line-height">
+        {{ if .Params.featured_image }}
+        <div class="center mb2">
+          <div class="aspect-ratio aspect-ratio--16x9">
+            <div class="aspect-ratio--object cover grow" style="background:url({{ .RelPermalink }}{{ .Params.featured_image }}) center;">
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </a>
+    {{ .Summary }}
+    <div class="tc">
+      <a class="f6 link dim ph3 pv1 mb0 dib white mt3 ttu bg-mid-gray" href="{{ .RelPermalink }}">scopri di più</a>
+    </div>
+  </div>
+</div>

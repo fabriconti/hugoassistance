@@ -1,0 +1,426 @@
+# url: https://ilmosaicodanza.it
+# baseUrl: https://ilmosaicodanza.it
+# per deployment usare command line hugo -b="https://www.ilmosaicodanza.it"
+# baseUrl: /
+# url: /
+name: La migliore scuola di danza a Milano
+# description: Facciamo di tutto per essere la migliore scuola di danza a Milano
+title: Il Mosaico Danza ASD - La migliore scuola di danza a Milano
+description: Il Mosaico Danza ASD - La migliore scuola di danza a Milano
+# copyright: Il Mosaico Danza ASD &copy; 2022. Tutti i diritti riservati # set to override the auto generated copyright using org info and now year
+googleAnalytics: G-EBVZR5F3Y8
+disqusShortname:
+# metaDataFormat: yaml
+pygmentsCodeFences: true
+pygmentsOptions: linenos=table
+# see more styles https://help.farbox.com/pygments.html
+pygmentsStyle: friendly
+footnoteReturnLinkContents: "&#8617;"
+# set deliberately low for testing choose your preffered number based on the blog layout you've chosen
+paginate: 20
+enableEmoji: true
+enableRobotsTXT: true
+preserveTaxonomyNames: true
+pluralizeListTitles: false
+defaultContentLanguage: "it"
+LanguageCode: "it"
+# SectionPagesMenu: main
+
+outputs:
+  home:
+  - HTML
+  - RSS
+  - JSON
+  page:
+    - HTML
+    - RSS
+
+theme:
+  - mosaico
+  - hugo-snap-gallery
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
+    renderer:
+      unsafe: true
+
+params:
+  show_title_as_headline: true
+  motto: La migliore scuola di danza a Milano
+  orgName: Il Mosaico Danza ASD
+  orgLocal: tutti i diritti riservati
+  favicon: /img/favicon.ico?v=0
+  textFontFamily: sans-serif
+  headingFontFamily: sans-serif
+  siteBgColor: gray
+  sidebarBgColor: near-black
+  headlineColor: dark-pink
+  headingColor: orange
+  textColor: white
+  sidebarTextColor: light-red
+  bodyLinkColor: gold
+  navLinkColor: near-black
+  sidebarLinkColor: yellow
+  footerTextColor: silver
+  buttonTextColor: near-white
+  buttonBgColor: dark-pink
+  buttonHoverTextColor: white
+  buttonHoverBgColor: blue
+  borderColor: moon-gray
+  socialInHeader: false
+  socialInFooter: false
+
+social:
+  facebook: mosaico
+  facebook_admin:
+  instagram: mosaico
+  youtube: mosaico
+  twitter: mosaico
+  github:
+  medium:
+
+taxonomies:
+  category: category
+  series: series
+  tag: tags
+
+# https://gohugo.io/about/hugo-and-gdpr/
+privacy:
+  googleAnalytics:
+    anonymizeIP: true
+    respectDoNotTrack: true
+  youtube:
+    privacyEnhanced: true
+  instagram:
+    simple: true
+    disableInlineCSS: true
+  twitter:
+    simple: true
+    disableInlineCSS: true
+menu:
+  main:
+    #root
+  - identifier: oraricorsi
+    name: Orari Corsi 2021-2022
+    params:
+      class: oldmenu
+    url: /category/orari-corsi-2021-2022/
+    weight: 10
+    radice: vero
+  - name: Corsi in zona Loreto
+    url: /danza-in-zona-loreto/
+    parent: oraricorsi
+  - name: Corsi in zona Porta Romana
+    url: /corsi-in-zona-porta-romana/
+    parent: oraricorsi
+  - name: Corsi in zona Tibaldi
+    url: /corsi-danza-moderna-zona-tibaldi/
+    parent: oraricorsi
+
+    # I corsi di danza w 20
+  - identifier: corsidanza
+    name: I Corsi di Danza
+    url: /category/corsi-di-danza/
+    weight: 20
+    # Flamenco
+  - identifier: corsiflamenco
+    name: Flamenco
+    url: /category/flamenco/
+    parent: corsidanza
+    weight: 10
+  - name: Flamenco
+    url: /flamenco/
+    parent: corsiflamenco
+    weight: 10
+  - name: Orario corsi di flamenco
+    url: /orari-corsi-flamenco/
+    parent: corsiflamenco
+    weight: 20
+  - name: Pedagogia del flamenco
+    url: /pedagogia-del-flamenco/
+    parent: corsiflamenco
+    weight: 30
+  - name: Che cos'è
+    url: /cose-il-flamenco/
+    parent: corsiflamenco
+    weight: 40
+  - name: 'Con Mucho Compas: senso del ritmo, del cante e della musica'
+    url: /con-mucho-compas/
+    parent: corsiflamenco
+    weight: 50
+  - name: La migliore scuola di flamenco a Milano Centro
+    url: /la-migliore-scuola-di-flamenco-a-milano/
+    parent: corsiflamenco
+    weight: 60
+  - name: Come montare una coreografia flamenca
+    url: /montare-una-coreografia-flamenco/
+    parent: corsiflamenco
+    weight: 70
+  - name: Imparare a improvvisare
+    url: /imparare_a_improvvisare/
+    parent: corsiflamenco
+    weight: 80
+  - name: Ritmica e palmas
+    url: /lezione-di-ritmica-e-palmas/
+    parent: corsiflamenco
+    weight: 90
+  - name: Dance Workout
+    url: /dance-workout/
+    parent: corsiflamenco
+    weight: 100
+  - name: Body Work
+    url: /body-work/
+    parent: corsiflamenco
+    weight: 110
+  - name: Flamencontemporaneo
+    url: /flamenco-contemporaneo/
+    parent: corsiflamenco
+    weight: 120
+  - name: Cultura del Flamenco
+    url: /flamencologia/
+    parent: corsiflamenco
+    weight: 130
+  - name: Lezioni di Sevillanas a Milano
+    url: /corso-di-sevillanas/
+    parent: corsiflamenco
+    weight: 140
+  - name: Nacchere
+    url: /nacchere/
+    parent: corsiflamenco
+    weight: 150
+  - name: Bata de cola
+    url: /bata-de-cola-flamenco/
+    parent: corsiflamenco
+    weight: 160
+  - name: Scarpe
+    url: /scarpe-da-flamenco/
+    parent: corsiflamenco
+    weight: 170
+  
+    # Lindy Hop e balli swing
+    # spostati in corsidanza w21  2022-05-17
+  - identifier: balliswing
+  - name: Lindy Hop e balli swing
+    parent: corsidanza
+    url: /category/lindy-hop-e-balli-swing/
+    weight: 21
+    # class: fabmenu
+  #   - name: 'Corsi di Swing: prenota subito!'
+  #     url: /nuovi-corsi-lindy-hop-milano/
+  #     #parent: balliswing
+  #     parent: corsidanza
+  #     weight: 22
+  - name : Lindy Hop
+    url: /lindy-hop/
+    #parent: balliswing
+    parent: corsidanza
+    weight: 23
+  - name: Boogie Woogie Jive e Rockabilly
+    url: /corso-di-boogie-jive-e-rockabilly-milano/
+    # parent: balliswing
+    parent: corsidanza
+    weight: 27
+  - name: Balboa
+    url: /balboa/
+    #parent: balliswing
+    parent: corsidanza
+    weight: 29
+  
+    # danza per bambini
+  - identifier: danzabambini
+    parent: corsidanza
+    name: Attività per bambini e ragazzi
+    url: /category/attivita-per-bambini/
+    weight: 30
+  - name: Danza Classica Bambini
+    url: /danza-classica-per-bambini/
+    parent: danzabambini
+    weight: 10
+  - name: Danza Moderna per bambini
+    url: /danza-moderna-per-bambini/
+    parent: danzabambini
+    weight: 20
+  - name: Danza Moderna per bambini
+    url: /danza-moderna-per-bambini/
+    parent: danzabambini
+    weight: 30
+  - name: Hip Hop Bambini
+    url: /baby-hip-hop/
+    parent: danzabambini
+    weight: 30
+  - name: Corsi per teenagers
+    url: /corsi-per-teenagers/
+    parent: danzabambini
+    weight: 40
+  - name: Latin Dance teen agers
+    url: /latin-dance-per-bambini-e-ragazzi/
+    parent: danzabambini
+    weight: 50
+  - identifier: arabdance
+    name: Lyrical Arab Dance
+    url: /lyrical-arab-dance/
+    parent: corsidanza
+    weight: 40
+  - name: Hilal Dance
+    url: /hilal-dance/
+    parent: arabdance
+    #parent: corsidanza
+    weight: 10
+    weight: 45
+    # si torna in corsidanza
+  - name: Danza del Ventre e Orientale
+    url: /corso-di-danza-del-ventre/
+    parent: corsidanza
+    weight: 50
+  - name: Contemporary Tribal Fusion
+    url: /contemporary-tribal-fusion/
+    parent: corsidanza
+    weight: 60
+  - name: Danza Classica
+    url: /corso-di-danza-classica/
+    parent: corsidanza
+    weight: 70
+  - name: Danza Moderna
+    url: /danza-moderna/
+    parent: corsidanza
+    weight: 80
+  - name: Danza Contemporanea
+    url: /danza-contemporanea/
+    parent: corsidanza
+    weight: 90
+  - name: Hip Hop
+    url: /corso-di-hip-hop-a-milano/
+    parent: corsidanza
+    weight: 100
+  - name: Reggaeton
+    url: /corsi-di-reggaeton/
+    parent: corsidanza
+    weight: 110
+  - name: Dancehall
+    url: /dancehall/
+    parent: corsidanza
+    weight: 120
+  - name: Salsa e Bachata
+    url: /salsa-e-bachata/
+    parent: corsidanza
+    weight: 130
+  - name: 'Balli latini: chachacha rumba e mambo'
+    url: /balli-latini/
+    parent: corsidanza
+    weight: 140
+  - name: Pizzica Tarantella e Tammurriata
+    url: /corsi-di-pizzica/
+    parent: corsidanza
+    weight: 150
+  - name: Ballo Liscio
+    url: /corso-di-ballo-liscio-a-milano/
+    parent: corsidanza
+    weight: 160
+  - name: 'Libera la Danza: il privilegio di muoverti con piacere'
+    url: /libera-la-danza/
+    parent: corsidanza
+    weight: 170
+  - name: Danze Popolari
+    url: /danze-popolari/
+    parent: corsidanza
+    weight: 180
+  - name: Danze Polinesiane
+    url: /danze-polinesiane/
+    parent: corsidanza
+    weight: 190
+  - name: Corso di Danza Michael Jackson Style
+    url: /corso-michael-jackson-style/
+    parent: corsidanza
+    weight: 200
+  - name: Tango Argentino
+    url: /corso-di-tango-argentino/
+    parent: corsidanza
+    weight: 210
+    # corsi di movimento e benessere w30
+  - identifier: corsimovimento
+    name: Corsi di Movimento e benessere
+    url: /category/corsi-movimento-e-benessere
+    weight: 30
+  - name: Ginnastica consapevole - Metodo Feldenkrais
+    url: /ginnastica-consapevole-metodo-feldenkrais/
+    parent: corsimovimento
+    weight: 10
+  - name: Pilates Matwork
+    url: /pilates/
+    parent: corsimovimento
+    weight: 20
+  - name: Pilates con Gym Ball
+    url: /pilates-con-gym-ball/
+    parent: corsimovimento
+    weight: 30
+  - name: Zumba Fitness
+    url: /zumba/
+    parent: corsimovimento
+    weight: 40
+    # root radice
+    # corso insegnanti di danza w40
+  - identifier: corsoinsegnanti
+    name: Corso Insegnanti di Danza
+    url: /insegnare-danza/
+    weight: 40
+  - name: Formazione insegnanti - Metodo Todaro
+    url: /formazione-insegnanti/
+    parent: corsoinsegnanti
+    weight: 10
+  - name: Anatomia In Pratica la meraviglia di muoverti senza sforzo
+    url: /anatomia-in-pratica-la-meraviglia-di-muoverti-senza-sforzo/
+    parent: corsoinsegnanti
+    weight: 30
+  - name: Le meraviglie del corpo
+    url: /le-meraviglie-del-corpo/
+    parent: corsoinsegnanti
+    weight: 20
+  - name: Elenco Discipline Danza Sportiva riconosciute dal C.ON.I.
+    url: /elenco-discipline-danza-sportiva-riconosciute-dal-coni/
+    parent: corsoinsegnanti
+    weight: 20
+    # root corsi online
+  - name: Corsi on line
+    url: /corsi-on-line/
+    weight: 50
+    # root stages di musica 60
+  - identifier: stagesdimusica
+    name: Stages di Musica
+    url: /category/stages-di-musica/
+    weight: 60
+  - name: Chitarra
+    url: /lezioni-di-chitarra/
+    parent: stagesdimusica
+    weight: 10
+  - name: Cajon
+    url: /lezioni-di-cajon-milano/
+    parent: stagesdimusica
+    weight: 20
+    # root 70
+  - identifier: nostriinsegnanti
+    name: I Nostri Insegnanti
+    url: /category/i-nostri-insegnanti
+    weight: 70
+  - name: Regolamento di Iscrizione
+    url: /regolamento-di-iscrizione/
+    weight: 80
+  - identifier: infocovid
+    name: Info e Regolamento Covid-19
+    url: /category/covid-19-info-e-regolamento/
+    weight: 90
+  - name: Il Mosaico Danza e il Covid-19
+    url: /il-mosaico-danza-e-il-covid-19/
+    parent: infocovid
+    weight: 10
+  - name: Regole di accesso ai locali - torniamo a ballare in sicurezza
+    url: /regole-di-accesso-ai-locali/
+    parent: infocovid
+    weight: 20
+    # root 100
+  - name: Contattaci | Il Mosaico Danza
+    url: /contact-us
+    weight: 100

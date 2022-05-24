@@ -1,0 +1,5 @@
+{{/* per stampare parametri nei content.
+ utilizzo: {{< param "buttonHoverBgColor" >}} */}}
+{{ $v := .Site.Params }}
+{{ range (split (.Get 0) ".") }}{{ $v = index $v (.) }}{{ end }}
+{{ $v }}

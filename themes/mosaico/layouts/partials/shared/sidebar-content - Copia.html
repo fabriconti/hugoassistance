@@ -1,0 +1,32 @@
+
+{{ with .Scratch.Get "sidebar" }}
+
+{{ if .image }}<img src="{{ .image }}" class="db ma0">{{ end }}
+<div class="blog-info pa4">
+  {{ if .title }}<h1 class="f3">{{ .title }}</h1>{{ end }}
+  {{ if .description }}<p class="f6 lh-copy measure">{{ .description | markdownify }}</p>{{ end }}
+  {{ if .author }}<p class="f7 measure lh-copy i mh0-l">Written by {{ .author }}</p>{{ end }}
+  {{ if .text_link_label }}<small class="db f7"><a href="{{ .text_link_url }}" class="dib fw7 ttu bt bw1 b--black-10 pt3">{{ .text_link_label }}</a></small>{{ end }}
+</div>
+
+{{ if .show_sidebar_adunit }}
+<div class="ad-unit pa4">
+  {{ range $.Site.Data.ads }}
+  <p class="f7 measure-narrow lh-copy mv0"><span class="b ttu db">{{ .title }}</span><span>{{ .body | markdownify }}</span></p>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}
+
+
+      {{ if .Site.Menus.main }}
+        <ul class="pl0 mr3">
+          {{ range .Site.Menus.main }}
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="{{ .URL }}" title="{{ i18n "pageTitle" . }}">
+              {{ .Name }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      {{ end }}

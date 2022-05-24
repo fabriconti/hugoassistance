@@ -1,0 +1,11 @@
+<!--
+  SPDX-FileCopyrightText: 2020 Max Mehl <mail@mehl.mx>
+  SPDX-License-Identifier: MIT
+-->
+<!-- count how many times we've called this shortcode; load the css if it's the first time -->
+{{- .Page.Scratch.Add "gallery" 1 -}}
+<div class="snap-gallery">
+  {{ .Inner }}
+</div>
+<!-- delete count of gallery figures (but not those of standalone figures -->
+{{- .Page.Scratch.Delete "thisgalfig" -}}

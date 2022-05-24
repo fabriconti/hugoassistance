@@ -1,0 +1,23 @@
+{{/* DEFAULT NELLE PAGINE DI LISTING */}}
+{{ define "main" }}
+<main class="page-main" role="main">
+  {{ partial "shared/social-links.html" . }}
+  <section>
+    <h1 class="f3 f2-ns fw4 lh-solid tc center">
+      {{ .Title }}
+    </h1>
+    <div class="list-content">
+    {{ range .Pages }}
+    <div>
+      {{ .Render "summary" }}
+    </div>
+      {{/* .Render "summary-with-image" */}}
+    {{ end }}
+  </div>
+  </section>
+  {{ partial "shared/social-links.html" . }}
+</main>
+<nav class="page-sidebar">
+{{ partial "shared/sidebar-content.html" . }}
+</nav>
+{{ end }}

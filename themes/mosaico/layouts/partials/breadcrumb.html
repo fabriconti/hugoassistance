@@ -1,0 +1,67 @@
+{{/* in baseof.html sotto header.html -> {{ partial "breadcrumb.html" . }} */}}
+{{ define "menu-item" }}
+  {{ $page := .page }}
+  {{ $key := .key }}
+  {{ $pageUrl := .pageUrl }}
+  {{ $classe := "" }}
+  {{ $uguale := eq $key .Identifier }}
+  <p>ARCA0</p>
+  {{ with .entry }}
+  <p>ARCA1</p>
+
+    {{/* <span class="green">{{ eq .Parent "" }}<br> pageUrl: {{ $pageUrl }}<br> url: {{ .URL }}<br> {{ if eq $pageUrl .URL }} {{ $classe := "active"}}{{ end }} classe: {{ $classe }}</span> */}}
+    {{ if or (.HasChildren) (eq .Parent "") }}
+      <li class="lh-copy ba bl-0 br-0 b--dotted b--gray
+      {{ if or (in $key .Identifier) (in $key .Parent) (eq .Parent "") }} {{else}}clip {{ end }}">
+      <p>ARCA2</p>
+      {{/* <span class="green">pageUrl: {{ $pageUrl }}<br> url: {{ .URL }}<br></span> */}}
+      {{/* if eq $pageUrl .URL }} {{ $classe := "active"}}{{ end }} classe: {{ $classe }} </span>*/}}
+
+        <a class="link yellow hover-orange hover-bg-black" href="{{ .URL }}">{{ .Name }}<p>ARCA3</p></a>
+        <ul class="list sub-menu {{ if eq $pageUrl .URL }} bg-orange {{ end }}" >
+          <li><p>ARCA4</p></li>
+        {{/* uguale: {{ eq $key .Identifier }} */}}
+          {{ range .Children }}
+            {{ template "menu-item" (dict "entry" .
+                        "page" $page "key" $key
+                        "pageUrl" $pageUrl
+                        "classe" $classe) }}
+          {{ end }}
+        </ul>
+      </li>
+    {{ else }}
+      <li class="lh-copy ba bl-0 br-0 b--dotted b--gray
+        {{ if in $key .Parent }} {{else}} clip {{ end }}
+        {{ if eq $pageUrl .URL}} b bg-purple light-yellow {{end}}">
+        <p>ARCA5</p>
+      {{/* <span class="pink">children  di {{ .Parent }} {{ $uguale }} key {{ $key }} identifier */}}
+        <a class="link yellow hover-orange hover-bg-purple" href="{{ .URL }}">{{ .Name }}<p>ARCA6</p></a>
+      </li>
+
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div id="sidebarSSS">
+<div class="ttu f6 h-title pt5-ns pt0-ns">
+  
+<ul class="list pl1 pl3-ns oldmenu">
+  <li><p>ARCA7</p></li>
+  {{ $page := . }}
+  {{ $currentPage := . }}
+  {{ $key := $page.Params.menuSection }}
+  {{ $pageUrl := $page.Params.url}}
+  
+  Key: {{  $key }}<br>
+  Title: {{ $page.Title }}<br>
+  Url: {{ $pageUrl }}<br>
+
+  {{ range .Site.Menus.main }}
+    {{ template "menu-item" (dict "entry" . "page" $page "key" $key "pageUrl" $pageUrl) }}
+  {{ end }}
+</ul>
+
+</div>
+<hr>
+
+</div>

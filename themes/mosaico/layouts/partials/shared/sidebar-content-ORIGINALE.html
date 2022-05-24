@@ -1,0 +1,15 @@
+{{ if .Site.Menus.main }}
+<div class="pa4">
+  <h2>sidebarra</h2>
+  <ul class="pl0 mr1">
+    {{ range .Site.Menus.main }}
+    <li class="list db-ns dib-l pr2 mv1">
+      <a class="hover-red no-underline black-70 link dim" href="{{ .URL }}" title="{{ i18n "pageTitle" . }}">
+        {{ .Name }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+{{ end }}
+</div>
+{{ partial "shared/social-links.html" . }}

@@ -1,0 +1,20 @@
+{{ define "main" }}
+<main class="page-main" role="main">
+  {{ partial "shared/social-links.html" . }}
+  <section class="mw7 center mb5">
+    <h1 class="f3 f2-ns fw4 lh-solid tc center"><span class="i">{{ .Title }}</span></h1>
+  </section>
+  <section class="">
+    {{ range .Pages }}
+    <div class="fl w-100 w-50-ns pa1">
+      {{ .Render "summary-insegnanti" }}
+    </div>
+      {{/* .Render "summary-with-image" */}}
+    {{ end }}
+  </section>
+  {{ partial "shared/social-links.html" . }}
+</main>
+<nav class="page-sidebar">
+{{ partial "shared/sidebar-content.html" . }}
+</nav>
+{{ end }}

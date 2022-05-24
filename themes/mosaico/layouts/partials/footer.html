@@ -1,0 +1,142 @@
+<footer class="f7 site-footer mb4 white">
+  <div class="bgfooter">
+  <p class="light-red tc">
+    {{ if ne .Site.Copyright "" }}{{ .Site.Copyright | safeHTML }}{{ else }} &copy; {{ now.Format "2006"}}{{ if .Site.Params.orgName }} {{ .Site.Params.orgName }}{{ end }}{{ if .Site.Params.orgLocal }}, {{ .Site.Params.orgLocal }}{{ end }}{{ end }}
+    {{/* partial "shared/attribution.html" */}}
+  </p>
+  <nav class="footer-links">
+    <div class="location">
+      <p class="tracked">Il Mosaico Danza ASD</p>
+      <ul>
+        <li class="orange">Sede Loreto</li>
+        <li class="gold">Via Privata Pomezia 12, MI</li>
+        <li class="orange">Sede Porta Romana</li>
+        <li class="gold">Via Passeroni 6, MI</li>
+        <li class="orange">Sede Tibaldi</li>
+        <li class="gold">c/o Teatring via Portoferraio 4, MI</li>
+      </ul>
+    </div>
+    <div class="contacts">
+      <div>
+        <p>Contatti</p>
+        <ul>
+          <li>📱 351.94.59.036</li>
+          <li>📱 339.61.73.388</li>
+          <li>wh 339.61.73.388</li>
+          <li>📞 02.58.31.79.62</li>
+          <li>info@ilmosaicodanza.it</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Crediti & Privacy</p>
+      <ul>
+        <li>Cookie Policy</li>
+        <li>Privacy Policy</li>
+        <li>GDPR</li>
+        <li>Statuto</li>
+      </ul>
+    </div>
+  </nav>
+  {{ partial "consent.html" . }}
+</div>
+</footer>
+<nav id="navbar-footer">
+    <div>
+      <a href="/category/orari-corsi-2021-2022/" class="moon-gray db tc no-underline">
+      <i class="w1 dib tight">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M232 120C232 106.7 242.7 96 256 96C269.3 96 280 106.7 280 120V243.2L365.3 300C376.3 307.4 379.3 322.3 371.1 333.3C364.6 344.3 349.7 347.3 338.7 339.1L242.7 275.1C236 271.5 232 264 232 255.1L232 120zM256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0zM48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48C141.1 48 48 141.1 48 256z" fill="currentColor"/>
+        </svg>
+      </i>
+        orari corsi
+      </a>
+    </div>
+    <div>
+      <a href="#top" title="vai a inizio pagina" class="moon-gray db tc no-underline mh3">
+        <i class="w1 dib">
+          <svg version="1.1" viewBox="0 0 84.693 54.686" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-30.225 -65.639)"><path d="m77.069 67.501 35.983 35.983c2.4871 2.4871 2.4871 6.5088 0 8.9694l-5.9796 5.9796c-2.4871 2.4871-6.5088 2.4871-8.9694 0l-25.532-25.479-25.506 25.506c-2.4871 2.4871-6.5088 2.4871-8.9694 0l-6.006-5.9796c-2.4871-2.4871-2.4871-6.5088 0-8.9694l35.983-35.983c2.4871-2.5135 6.5088-2.5135 8.9958-0.02646z" fill=currentColor stroke-width=".26458"/></g></svg>
+        </i>
+        top
+        </a>
+    </div>
+    <div>
+      <a href="/contact-us/" class="moon-gray db tc no-underline">
+      <i class="w1 dib">
+        <svg version="1.1" viewBox="0 0 135 118.77" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-41.358 -63.835)"><path d="m138.49 110.64c4.6831 0 8.4667 3.7571 8.4667 8.2285 0 4.9212-3.7835 8.7048-8.4667 8.7048-4.6831 0-8.2285-3.7703-8.2285-8.4667 0-4.6964 3.519-8.4667 8.2285-8.4667zm-29.633-0.23812c4.6964 0 8.2285 3.7703 8.2285 8.4667 0 4.6964-3.7703 8.2286-8.2285 8.2286s-8.2285-3.7703-8.2285-8.2286 3.519-8.4667 8.2285-8.4667zm-29.633 0.23812c4.6964 0 8.2285 3.7703 8.2285 8.4667 0 4.6964-3.7703 8.4667-8.2285 8.4667-4.6964 0-8.464-3.7703-8.464-8.4667-3e-3 -4.7096 3.7544-8.4667 8.464-8.4667zm29.633-46.805c37.412 0 67.495 24.638 67.495 55.033 0 12.599-5.2679 24.143-13.999 33.417 3.9344 10.451 12.136 19.283 12.269 19.381 1.7526 1.8521 2.2154 4.5641 1.2234 6.8792-0.79428 2.5268-3.0596 4.0614-5.6049 4.0614-16.269 0-28.866-6.813-36.804-12.237-7.6385 2.3812-15.917 3.7703-24.58 3.7703-37.412 0-67.495-24.641-67.495-54.795 0-30.155 30.083-55.51 67.495-55.51zm0 97.605c7.0776 0 14.055-1.0914 20.733-3.2068l6.0193-1.8852 5.1567 3.6367c3.7703 2.6776 8.9614 5.6568 15.211 7.6729-1.951-3.2068-3.8021-6.813-5.2573-10.649l-2.8099-7.4083 5.4557-5.7864c4.7546-5.1012 10.509-13.541 10.509-24.707 0-23.349-24.67-42.333-54.795-42.333-30.125 0-54.795 18.984-54.795 42.333 0 23.349 24.199 42.333 54.573 42.333z" stroke-width=".26458" fill="currentColor"/></g></svg>
+      </i>
+      Contattaci</a>
+    </div>
+</nav>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.1/tsparticles.min.js"
+    integrity="sha512-PYHWDEuXOTJ9MZ+/QHqkbgiEYZ+LImQv3i/9NyYOABFvK37e4q4Wg7aQDN1JpoGiEu1TYZh6JMrZluZox2gbDA=="
+    crossorigin="anonymous"
+  ></script>
+
+<script>
+tsParticles.load("tsparticles", {
+  "autoPlay": true,
+  fpsLimit: 120,
+  "interactivity": {
+    "events": {
+      "onClick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "onHover": {
+        "enable": true,
+        "mode": "connect",
+        "parallax": {
+          "force": 60
+        }
+      },
+    },
+  },
+  particles: {
+    color: { 
+      value: "#EBEF9B"
+      //value: "random"
+    },
+    //"links": {
+    //  "color": {
+    //    "value": "#ffffff"
+    //  },
+    //  "distance": 150,
+    //  "opacity": 0.4
+    //},
+    lineLinked: {
+      color: "#ffffff",
+      distance: 150,
+      enable: true,
+      opacity: 0.4,
+      width: 1.0
+    },
+    move: {
+      bounce: false,
+      direction: "none",
+      enable: true,
+      outMode: "out",
+      random: false,
+      speed: 2,
+      straight: false
+    },
+    number: { 
+      density: { enable: false },
+      value: 32
+    },
+    opacity: {
+      animation: { enable: false },
+      random: false,
+      value: 0.5
+    },
+    shape: {
+      type: "circle"
+    },
+    size: {
+      anim: { enable: true },
+      random: true,
+      value: 5
+    }
+  }
+});
+</script>

@@ -1,0 +1,55 @@
+{{ define "menu-item" }}
+  {{ $page := .page }}
+  {{ with .entry }}
+    {{ if .HasChildren }}
+      <li class="lh-copy  {{ if $page.HasMenuCurrent "main" . }} attiva {{ end }}">
+        <a href="{{ .URL }}" class="link yellow hover-orange hover-bg-purple">{{ .Name }}</a>
+        <ul class="list pl3 sub-menu">
+          {{ range .Children }}
+            {{ template "menu-item" (dict "entry" . "page" $page) }}
+          {{ end }}
+        </ul>
+      </li>
+    {{ else }}
+      <li class="lh-copy ba bl-0 br-0 b--dotted b--gray {{ if $page.IsMenuCurrent "main" . }}active{{ end }}">
+        <a class="link yellow hover-orange hover-bg-purple" href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="ttu f6 h-title">
+<ul class="list pl3 oldmenu">
+  {{ $page := . }}
+  {{ if $page.Date }} <div class="f3">{{ $page.Language }}</div> {{ end }}
+  {{ range .Site.Menus.main }}
+    {{ template "menu-item" (dict "entry" . "page" $page) }}
+  {{ end }}
+</ul>
+</div>
+<hr>
+
+<div class="container tagcloud">
+    {{ if ne (len $.Site.Taxonomies.tags) 0 }}
+      {{ $largestFontSize := 1.4 }}
+      {{ $smallestFontSize := 1.0 }}
+      {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
+      {{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
+      {{ $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
+      {{ $spread := sub $max $min }}
+      {{ $fontStep := div $fontSpread $spread }}
+        {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+          {{ $tagCount := len $taxonomy.Pages }}
+          {{ $currentFontSize := (add $smallestFontSize (mul (sub $tagCount $min) $fontStep) ) }}
+          {{ $weigth := div (sub (math.Log $tagCount) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
+          {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth)) }}
+            <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}"
+            class="tagcloud-item" style="font-size: {{ $currentFontSize }}rem;">
+              {{ $name }}<sup>{{ $tagCount }}</sup>
+            </a>
+        {{ end }}
+    {{ end }}
+</div>
+
+<hr>
+{{ partial "shared/social-links.html" . }}

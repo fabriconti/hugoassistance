@@ -1,0 +1,59 @@
+<!--
+  SPDX-FileCopyrightText: 2020 Max Mehl <mail@mehl.mx>
+  SPDX-License-Identifier: MIT
+-->
+<!-- This file is a variation of figure.html specifically to load all
+     files from a directory. Assumes that is has the gallery shortcode
+     as parent
+-->
+<!-- count how many times we've called this shortcode; load the css if it's the first time -->
+{{- if not ($.Page.Scratch.Get "figurecount") }}<link rel="stylesheet" href="/css/snap-gallery.css" />{{ end }}
+{{- $.Page.Scratch.Add "figurecount" 1 -}}
+
+{{- $files := readDir (print "/static" (.Get "srcdir")) -}}
+{{- $maxid := len $files -}}
+
+{{- range $files -}}
+  {{ $src := (print ($.Get "srcdir") "/" .Name) }}
+  {{- $thumb := $src -}}
+
+  <!-- set unique ID for gallery and figure -->
+  {{- $figid := "" -}}
+  {{- $galid := "" -}}
+  {{- $id := "" -}}
+  {{- $previd := "" -}}
+  {{- $nextid := "" -}}
+  {{- $galid = $.Page.Scratch.Get "gallery" -}}
+  {{- if not $galid }}{{ $galid = 0 }}{{ end -}}
+  {{- $galid = add $galid 1 -}}
+  {{- $.Page.Scratch.Add "thisgalfig" 1 -}}
+  {{- $figid = $.Page.Scratch.Get "thisgalfig" -}}
+  {{- $id = print "gal" $galid "-" "fig" $figid -}}
+  {{- $previd = print "gal" $galid "-" "fig" (sub $figid 1) -}}
+  {{- $nextid = print "gal" $galid "-" "fig" (add $figid 1) -}}
+
+  <figure>
+    <!-- THUMBNAIL -->
+    <a href="#{{ $id }}">
+      <img src="{{ $thumb | relURL }}" class="snap-thumb" />
+    </a>
+    <!-- FULL IMAGE; HIDDEN -->
+    <div class="snap-lightbox" id="{{ $id }}">
+      <a href="#_" class="snap-lightbox-close"></a>
+      <div class="snap-lightbox-inner">
+        <img src='{{ $src }}' />
+      </div>
+      <a href="#_" class="snap-lightbox-close-button"><i class="snap-lightbox-x"></i></a>
+      {{- if not (eq $figid 1) -}}
+        <a href="#{{ $previd }}" class="snap-lightbox-prev"><i class="snap-lightbox-arrow"></i></a>
+      {{- else -}}
+        <span class="snap-lightbox-prev"><i class="snap-lightbox-arrow"></i></span>
+      {{- end -}}
+      {{- if not (eq $figid $maxid) -}}
+        <a href="#{{ $nextid }}" class="snap-lightbox-next"><i class="snap-lightbox-arrow"></i></a>
+      {{- else -}}
+        <span class="snap-lightbox-next"><i class="snap-lightbox-arrow"></i></span>
+      {{- end }}
+    </div>
+  </figure>
+{{ end }}

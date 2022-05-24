@@ -1,0 +1,109 @@
+{{/* {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+{{ $.Scratch.Add "path" .Site.BaseURL }}
+<p>{{.Parent}}</p>
+<ul class="breadcrumb">
+  <li><a href="/">home</a></li>
+  {{ range $index, $element := split $url "/" }}
+    {{ $.Scratch.Add "path" $element }}
+      {{ if ne $element "" }}
+      <li><a href='{{ $.Scratch.Get "path" }}'>{{ humanize . }}</a></li>
+      {{ $.Scratch.Add "path" "/" }}
+      {{ end }}
+  {{ end }}
+</ul> */}}
+
+<div class="aside">
+
+<style type="text/css">
+  .aside li.active::after {
+    content: "<";
+    color:#AC1E1A;
+  }
+
+  .aside li.active a {
+    color:#AC1E1A;
+  }
+</style>
+
+  
+<h1 >Navigation</h1>
+<ul>
+{{ $currentNode := . }}
+{{ range .Site.Menus.main }}
+
+  <li  class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}active{{end}}">
+    <a href="{{.URL}}">{{.Name}}</a>
+  </li>
+        {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
+        {{ $.Scratch.Set "CurrentMenu" . }}
+        {{ $.Scratch.Add "Breadcrumbs" (print " > <a href='" .URL  "'>" .Name "</a>" )  }}
+      {{ if .HasChildren }}
+      <ul>
+      {{ range .Children }}
+      {{ if ne .Identifier ""}}
+      <li class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}active{{end}}">
+          <a href="{{.URL}}">{{ .Name }} </a>
+      </li>
+      {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
+      {{ $.Scratch.Set "CurrentMenu" . }}
+      {{ $.Scratch.Add "Breadcrumbs" (print " > <a href='" .URL  "'>" .Name "</a>" )  }}
+      {{ if .HasChildren }}
+        <ul>
+        {{ range .Children }}
+        {{ if ne .Identifier ""}}
+        <li class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}active{{end}}">
+            <a href="{{.URL}}">{{ .Name }}</a>
+        </li>
+
+        {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
+        {{ $.Scratch.Set "CurrentMenu" . }}
+        {{ $.Scratch.Add "Breadcrumbs" (print " > <a href='" .URL  "'>" .Name "</a>" )  }}
+        {{ if .HasChildren }}
+          <ul>
+          {{ range .Children }}
+          {{ if ne .Identifier ""}}
+          <li class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}active{{end}}">
+              <a href="{{.URL}}">{{ .Name }} </a>
+          </li>
+
+          {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
+          {{ $.Scratch.Set "CurrentMenu" . }}
+          {{ $.Scratch.Add "Breadcrumbs" (print " > <a href='" .URL  "'>" .Name "</a>" )  }}
+          {{ if .HasChildren }}
+            <ul>
+            {{ range .Children }}
+            {{ if ne .Identifier ""}}
+            <li class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}active{{end}}">
+                <a href="{{.URL}}">{{ .Name }} </a>
+            </li>
+            
+            {{ end }}
+            {{ end }}
+            </ul>
+            {{ end }}
+            {{ end }}
+          
+          
+          {{ end }}
+          {{ end }}
+          </ul>
+          {{ end }}
+          {{ end }}
+        
+        {{ end }}
+        {{ end }}
+        </ul>
+        {{ end }}
+        {{ end }}
+
+      {{ end }}
+      {{ end }}
+      </ul>
+      {{ end }}
+      {{ end }}
+      
+{{end}}
+</ul>
+
+
+</div>

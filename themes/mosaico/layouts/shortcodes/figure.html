@@ -1,0 +1,8 @@
+{{/* code by Laura Kalbag https://laurakalbag.com/processing-responsive-images-with-hugo/ */}}
+{{/* da verificare le best practices dentro a figcaption 25 feb 2022 panathos@gmail.com */}}
+<figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
+  {{.Inner}}
+    <figcaption>
+      <p>{{ .Get "figcaption" }}</p>
+  </figcaption>
+</figure>

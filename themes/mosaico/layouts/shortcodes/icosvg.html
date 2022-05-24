@@ -1,0 +1,8 @@
+{{/* inserisce file svg   {{<icosvg "cornetta.svg">}}
+{{ readFile "/static/svg/" + .Get 0 | safeHTML }}
+{{ $svg := .Get 0}}
+{{ $svg := delimit (slice "/svg/" $svg) "" }}
+{{ readFile $svg | safeHTML}} oppure anche {{ $svg | readFile | safeHTML }}
+	*/}}
+	{{ index .Params 0 }}
+{{ readFile (print "svg/" (index .Params 0)) | safeHTML }}

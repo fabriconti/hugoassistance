@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <main class="page-main {{ .Kind }} pa4" role="main">
+      <article class="lh-copy">
+{{ if .Params.show_title_as_headline }}<h1 class="f3-ns fw5-ns mv4 lh-solid tracked-tight">{{ .Title }}</h1>{{ end }}
+{{ partial "shared/social-links.html" . }}
+{{ .Content }}
+{{ partial "shared/social-links.html" . }}
+      </article>
+  </main>
+    <nav class="page-sidebar">
+{{ partial "shared/sidebar-content.html" . }}
+    </nav>
+{{ end }}

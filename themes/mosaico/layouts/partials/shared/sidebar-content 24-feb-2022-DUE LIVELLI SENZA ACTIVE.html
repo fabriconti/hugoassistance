@@ -1,0 +1,42 @@
+{{ if .Site.Menus.main }}
+  <div class="pa4">
+    <ul class="pl0 mr1">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        {{ if .HasChildren }}
+          <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+            <a href="#">
+              {{ .Pre }}
+              <span>{{ .Name }}</span>
+            </a>
+          </li>
+          <ul class="sub-menu">
+          {{ range .Children }}
+          <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+              <a href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+          </ul>
+        {{ else }}
+          <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+            <a href="{{ .URL }}">
+              {{ .Pre }}
+              <span>{{ .Name }}</span>
+            </a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
+<hr>
+{{ range site.Sections }}
+  li class={{ if .IsAncestor $ }}active{{ end }}
+    a href={{ .RelPermalink }} {{ .Title }}
+    ul
+      {{ range .Sections }}
+        / ...
+      {{ end }}
+{{ end }}
+<hr>
+{{ partial "shared/social-links.html" . }}

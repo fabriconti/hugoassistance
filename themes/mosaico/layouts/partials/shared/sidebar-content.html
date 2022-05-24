@@ -1,0 +1,83 @@
+{{ define "menu-item" }}
+  {{ $page := .page }}
+  {{ $key := .key }}
+  {{ $pageUrl := .pageUrl }}
+  {{ $classe := "" }}
+  {{ $uguale := eq $key .Identifier }}
+  {{ with .entry }}
+
+    {{/* <span class="green">{{ eq .Parent "" }}<br> pageUrl: {{ $pageUrl }}<br> url: {{ .URL }}<br> {{ if eq $pageUrl .URL }} {{ $classe := "active"}}{{ end }} classe: {{ $classe }}</span> */}}
+    {{ if or (.HasChildren) (eq .Parent "") }}
+      <li class="lh-copy ba bl-0 br-0 b--dotted b--gray
+      {{ if or (in $key .Identifier) (in $key .Parent) (eq .Parent "") }} {{else}}clip {{ end }}">
+      {{/* <span class="green">pageUrl: {{ $pageUrl }}<br> url: {{ .URL }}<br></span> */}}
+      {{/* if eq $pageUrl .URL }} {{ $classe := "active"}}{{ end }} classe: {{ $classe }} </span>*/}}
+
+        <a class="link yellow hover-orange hover-bg-black" href="{{ .URL }}">{{ .Name }}</a>
+        <ul class="list sub-menu {{ if eq $pageUrl .URL }} bg-purple {{ end }}" >
+        {{/* uguale: {{ eq $key .Identifier }} */}}
+          {{ range .Children }}
+            {{ template "menu-item" (dict "entry" .
+                        "page" $page "key" $key
+                        "pageUrl" $pageUrl
+                        "classe" $classe) }}
+          {{ end }}
+        </ul>
+      </li>
+    {{ else }}
+      <li class="lh-copy ba bl-0 br-0 b--dotted b--gray
+        {{ if in $key .Parent }} {{else}} clip {{ end }}
+        {{ if eq $pageUrl .URL}} b bg-purple light-yellow {{end}}">
+      {{/* <span class="pink">children  di {{ .Parent }} {{ $uguale }} key {{ $key }} identifier */}}
+        <a class="link yellow hover-orange hover-bg-purple" href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div id="sidebar">
+<div class="ttu f6 h-title pt5-ns pt0-ns"  id="menunavbar">
+  {{/*  {{ partial "shared/search.html"}}  */}}
+  <div class="pl1 pl3-ns yellow hover-orange"><a class="link yellow hover-orange hover-bg-black" href="/search/">🔎 Cerca nel sito</a></div>
+<ul class="list pl1 pl3-ns oldmenu">
+  {{ $page := . }}
+  {{ $key := $page.Params.menuSection }}
+  {{ $pageUrl := $page.Params.url}}
+  {{/* {{ $key := "oraricorsi" }}
+  {{ $key := "crosidanza" }} */}}
+
+  {{ range .Site.Menus.main }}
+    {{ template "menu-item" (dict "entry" . "page" $page "key" $key "pageUrl" $pageUrl) }}
+  {{ end }}
+</ul>
+
+</div>
+<hr>
+<div class="inspiration-point">INSPIRATION POINT</div>
+<div class="container tagcloud ml2">
+    {{ if ne (len $.Site.Taxonomies.tags) 0 }}
+      {{ $largestFontSize := 1.2 }}
+      {{ $smallestFontSize := 0.8 }}
+      {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
+      {{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
+      {{ $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
+      {{ $spread := sub $max $min }}
+      {{ $fontStep := div $fontSpread $spread }}
+        {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+          {{ $tagCount := len $taxonomy.Pages }}
+          {{ $currentFontSize := (add $smallestFontSize (mul (sub $tagCount $min) $fontStep) ) }}
+          {{ $weigth := div (sub (math.Log $tagCount) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
+          {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth)) }}
+          {{ $ctag := strings.Replace (printf "%.1f" $currentFontSize) "." "" }}
+            <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}"
+            class="tagcloud-item link ctag{{ $ctag }}" title="{{ $name }}" style="font-size: {{ $currentFontSize }}rem;">
+              {{/*  {{ $name }}<sup>{{ $tagCount }}</sup>  */}}
+              {{ $name }}
+            </a>
+        {{ end }}
+    {{ end }}
+</div>
+<hr>
+{{ partial "shared/social-links.html" . }}
+</div>

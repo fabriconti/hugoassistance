@@ -1,0 +1,18 @@
+{{ define "main" }}
+    <main class="page-main {{ .Kind }}">
+        <article class="lh-copy">
+            {{ if .Param "show_title_as_headline" }}
+                <h1 class="f3 f2-ns mb2 lh-solid mt3">{{ .Title }}</h1>{{ end }}
+{{/*                  {{ with .Page.Param "motto" }}
+                <h2 class="f6 i light-silver">{{.}}</h2>
+            {{ end }}  */}}
+            {{ partial "shared/social-links.html" . }}
+            {{ .Content }}
+            {{ partial "shared/social-links.html" . }}
+        </article>
+    <!-- {{- partial "footer.html" . -}} -->
+    </main>
+    <nav class="page-sidebar">
+        {{ partial "shared/sidebar-content.html" . }}
+    </nav>
+{{ end }}

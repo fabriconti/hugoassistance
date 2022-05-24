@@ -1,0 +1,89 @@
+<!--
+  SPDX-FileCopyrightText: 2020 Max Mehl <mail@mehl.mx>
+  SPDX-License-Identifier: MIT
+-->
+<!-- count how many times we've called this shortcode; load the css if it's the first time -->
+{{- if not ($.Page.Scratch.Get "figurecount") }}<link rel="stylesheet" href="/css/snap-gallery.css" />{{ end }}
+{{- $.Page.Scratch.Add "figurecount" 1 -}}
+<!-- use src image -->
+{{- $thumb := .Get "src" -}}
+{{- $src := .Get "src" -}}
+
+<!-- set unique ID depending on whether part of gallery or alone -->
+{{- $figid := "" -}}
+{{- $galid := "" -}}
+{{- $id := "" -}}
+{{- $previd := "" -}}
+{{- $nextid := "" -}}
+{{- if .Parent -}} <!-- gallery -->
+  {{- $galid = .Page.Scratch.Get "gallery" -}}
+  {{- if not $galid }}{{ $galid = 0 }}{{ end -}}
+  {{- $galid = add $galid 1 -}}
+  {{- $.Page.Scratch.Add "thisgalfig" 1 -}}
+  {{- $figid = .Page.Scratch.Get "thisgalfig" -}}
+{{- else -}} <!-- standalone figure -->
+  {{- $.Page.Scratch.Add "nogalfig" 1 -}}
+  {{- $figid = .Page.Scratch.Get "nogalfig" -}}
+{{- end -}}
+{{- if $galid -}} <!-- gallery -->
+  {{- $id = print "gal" $galid "-" "fig" $figid -}}
+  {{- $previd = print "gal" $galid "-" "fig" (sub $figid 1) -}}
+  {{- $nextid = print "gal" $galid "-" "fig" (add $figid 1) -}}
+{{- else -}} <!-- standalone figure -->
+  {{- $id = print "fig" $figid -}}
+{{- end -}}
+
+<figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
+  <div class="snap-wrapper">
+    {{ if (.Get "link") -}}
+      <a href="{{ .Get "link" }}"
+         {{- with .Get "target" }} target="{{ . }}"{{ end -}}
+         {{- with .Get "rel" }} rel="{{ . }}"{{ end -}}
+         >
+    {{ else -}}
+      {{ if not (eq (.Get "lightbox") "none") }}<a href="#{{ $id }}">{{ end }}
+    {{- end -}}
+    <!-- THUMBNAIL -->
+      {{/* ORIGINALE 26 feb 2021 <img src="{{ $thumb | relURL }}" class="snap-thumb" */}}
+      <img src="{{ .Page.Permalink }}{{ $src }}" class="snap-thumb"
+      {{- with .Get "alt" }} alt="{{ . }}"{{ end -}}
+      {{- with .Get "title" }} title="{{ . }}"{{ end -}}
+      {{- with .Get "height" }} height="{{ . }}"{{ end -}}
+      {{- with .Get "width" }} width="{{ . }}"{{ end -}}
+       />
+      {{- if or (.Get "caption") (.Get "attr")}}
+        <figcaption class="i gold">
+          {{- .Get "caption" | markdownify -}}
+          {{- with .Get "attr" }} {{ . | markdownify}}{{ end -}}
+        </figcaption>
+      {{- end }}
+    </a>
+    <!-- FULL IMAGE; HIDDEN -->
+    {{- if not (eq (.Get "lightbox") "none") -}}
+      <div class="snap-lightbox" id="{{ $id }}">
+        <a href="#_" class="snap-lightbox-close"></a>
+        <div class="snap-lightbox-inner">
+          <img src="{{ .Get "src" }}" {{ with .Get "alt" }}alt="{{ . }}"{{ end }} />
+          <p>
+          {{- if or (.Get "caption") (.Get "attr") -}}
+            {{- .Get "caption" | markdownify -}}
+            {{- with .Get "attrlink" }} <a href="{{ . }}">{{- end -}}
+            {{- with .Get "attr" }} {{ . | markdownify}}{{ end -}}
+            {{- with .Get "attrlink" }}</a>{{- end -}}
+          {{- end }}
+          </p>
+        </div>
+        <a href="#_" class="snap-lightbox-close-button"><i class="snap-lightbox-x"></i></a>
+        {{- if .Parent -}}
+          {{- if not (eq $figid 1) -}}
+            <a href="#{{ $previd }}" class="snap-lightbox-prev"><i class="snap-lightbox-arrow"></i></a>
+          {{- else -}}
+            <span class="snap-lightbox-prev"><i class="snap-lightbox-arrow"></i></span>
+          {{- end -}}
+          <!-- TODO: Somehow try to identify whether this is the last element in the gallery -->
+          <a href="#{{ $nextid }}" class="snap-lightbox-next"><i class="snap-lightbox-arrow"></i></a>
+        {{- end }}
+      </div>
+    {{- end -}}
+  </div>
+</figure>
