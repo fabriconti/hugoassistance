@@ -1,14 +1,16 @@
 ---
 author: Sabina Todaro
-date: "2022-05-18T15:55:32+02:00"
+date: 2022-05-18T15:55:32+02:00
 # featured_image: /img/la-migliore-scuola-di-danza-di-milano.webp
-featured_image: /img/spettacolo-scuola-di-danza-il-mosaico.webp
-images: 
- - /img/spettacolo-scuola-di-danza-il-mosaico.webp
-title: Il Mosaico Danza ASD - Scuola di danza a Milano
-description: >
-  Al Mosaico la danza è un mezzo, non è il fine: divertirci danzando è una cosa seria. La scuola di danza fondata a Milano da Sabina Todaro, è un punto di riferimento per il Flamenco, la Lyrical Arab Dance, il Lindy Hop e le danze Swing, Salsa, Reggaeton e molto ancora.
-
+# featured_image: /img/spettacolo-scuola-di-danza-il-mosaico.webp
+# images:
+#  - /img/spettacolo-scuola-di-danza-il-mosaico.webp
+# title: Il Mosaico Danza ASD - Scuola di danza a Milano
+# description: >
+# Al Mosaico la danza è un mezzo, non è il fine: divertirci danzando è una cosa
+# seria. La scuola di danza fondata a Milano da Sabina Todaro, è un punto di
+# riferimento per il Flamenco, la Lyrical Arab Dance, il Lindy Hop e le danze
+# Swing, Salsa, Reggaeton e molto ancora.
 motto: La migliore scuola di danza a Milano
 layout: single
 # menu: main

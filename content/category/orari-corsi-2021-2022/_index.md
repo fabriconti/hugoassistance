@@ -1,5 +1,5 @@
 ---
-date: "2022-05-23T17:49:15+01:00"
+date: 2022-05-23T17:49:15+01:00
 title: Orari Corsi 2021-2022
 url: /category/orari-corsi-2021-2022/
 layout: list-oraricorsi

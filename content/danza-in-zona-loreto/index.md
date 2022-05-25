@@ -2,14 +2,21 @@
 author: Sabina Todaro
 category:
 - Orari Corsi 2021-2022
-date: "2022-05-23T17:49:22+01:00"
+date: 2022-05-23T17:49:22+01:00
 featured_image: logo-il-mosaico-danza-asd.svg
 images:
 - logo-il-mosaico-danza-asd.svg
+- dallingresso-verso-sale.webp
+- corsi-di-flamenco-milano-zona-loreto.webp
+- corso-di-pizzica-e-danze-del-sud-milano.webp
+- dancehall.webp
 summary: >
-  <h2>Corsi di danza e movimento</h2>
-  <h3>Zona Loreto Anno 2021/2022</h3>
-  I corsi si tengono dal lunedì al giovedì compresi ed anche il sabato: Flamenco, Lindy Hop, Balboa, ballo Liscio, Boogie Woogie, Rockabilly, Salsa, Reggaeton, Danza Classica, Danza Contemporanea, Lyrical Arab Dance, Dance Workout, Danza del ventre, Zumba.
+ <h2>Corsi di danza e movimento</h2>
+ <h3>Zona Loreto Anno 2021/2022</h3>
+ I corsi si tengono dal lunedì al giovedì compresi ed anche il sabato:
+ Flamenco, Lindy Hop, Balboa, ballo Liscio, Boogie Woogie, Rockabilly, Salsa,
+ Reggaeton, Danza Classica, Danza Contemporanea, Lyrical Arab Dance, Dance
+ Workout, Danza del ventre, Zumba.
 weight: 100
 tags:
   - baile flamenco
@@ -48,7 +55,17 @@ menuSection: oraricorsi
 ORARI AGGIORNATI IL 17 MAGGIO 2022 - VALIDI FINO AL 30 GIUGNO 2022
 </div>
 
-NB: Gli orari potrebbero subire variazioni. Prima di partecipare a una lezione di prova è assolutamente necessario che la prenoti via mail o per telefono. I corsi sono a numero chiuso!
+NB: Gli orari potrebbero subire variazioni. Prima di partecipare a una lezione di
+
+asasd
+asdasds
+
+asdasd
+
+asdasd
+
+
+prova è assolutamente necessario che la prenoti via mail o per telefono. I corsi sono a numero chiuso!
 
 <div class="mw6 pl4 fr">
 {{< figureh src="dallingresso-verso-sale.webp" caption="La segreteria del Mosaico Danza sede Milano Loreto" alt="La segreteria del Mosaico Danza sede Milano Loreto" >}}
@@ -81,7 +98,7 @@ Contemporanea o la danza e il movimento come forme di benessere come Zumba,
 
 Prenotati per una lezione di prova, e porta anche gli amici se vuoi :smile:
 
-<p class="giorno">Lunedì <small class="silver">Sede Via Pomezia 12 <a href="https://bit.ly/3wnLl8q" target="_blank">📍 mappa</a></small></p>
+<p class="giorno">Lunedì <small class="silver">Sede Via Pomezia 12 <a href="https://bit.ly/3wnLl8q" target="_blank" title="Sede Via Pomezia 12">📍 mappa</a></small></p>
 
 * 🕠 <span>17.30 - 18.30</span> Danza Bambini (6-8 anni)
 * 🕕 <span>18.30 - 19.30</span> Danza del ventre Intermedio
@@ -99,7 +116,7 @@ caption="Corsi di flamenco al Mosaico"
 alt="Ballerini di flamenco al Mosaico Danza" >}}
 </div>
 
-<p class="giorno">Martedì <small class="silver">Sede Via Pomezia 12 <a href="https://bit.ly/3wnLl8q" target="_blank">📍 mappa</a></small></p>
+<p class="giorno">Martedì <small class="silver">Sede Via Pomezia 12 <a href="https://bit.ly/3wnLl8q" target="_blank" title="Sede Via Pomezia 12">📍 mappa</a></small></p>
 
 * 🕖 <span>18.45 - 20.00</span> Danza Classica Intermedio
 * 🕖 <span>19.00 - 20.00</span> Reggaeton e Dancehall Base
@@ -111,7 +128,7 @@ alt="Ballerini di flamenco al Mosaico Danza" >}}
 * 🕤 <span>21.30 - 22.30</span> Boogie Woogie 
 {.orari7}
 
-<p class="giorno">Mercoledì <small class="silver">Sede Via Pomezia 12 <a href="https://bit.ly/3wnLl8q" target="_blank">📍 mappa</a></small></p>
+<p class="giorno">Mercoledì <small class="silver">Sede Via Pomezia 12 <a href="https://bit.ly/3wnLl8q" target="_blank"  title="Sede Via Pomezia 12">📍 mappa</a></small></p>
 
 * 🕢 <span>19.30 - 20.30</span> Zumba Fitness
 * 🕢 <span>19.30 - 20.30</span> All Jazz Steps
@@ -127,7 +144,7 @@ alt="Ballerini di flamenco al Mosaico Danza" >}}
   alt="Pizzica e danze del Sud Italia" >}}
 </div>
 
-<p class="giorno">Giovedì <small class="silver">Sede Via Pomezia 12 <a href="https://bit.ly/3wnLl8q" target="_blank">📍 mappa</a></small></p>
+<p class="giorno">Giovedì <small class="silver">Sede Via Pomezia 12 <a href="https://bit.ly/3wnLl8q" target="_blank" title="Sede Via Pomezia 12">📍 mappa</a></small></p>
 
 * 🕗 <span>20.00 - 21.00</span> Lindy Hop New Open
 * 🕗 <span>20.00 - 21.00</span> Lindy Hop New Open
@@ -137,13 +154,7 @@ alt="Ballerini di flamenco al Mosaico Danza" >}}
 * 🕙 <span>22.00 - 23.00</span> Lindy Hop Coreografico
 {.orari7}
 
-<div class="mw6 pl4 fr">
-{{< figureh src="dancehall.webp"
-  caption="Allieve di dancehall e reggaeton"
-  alt="Allieve di dancehall e reggaeton" >}}
-</div>
-
-<p class="giorno">Sabato <small class="silver">Sede Via Pomezia 12 <a href="https://bit.ly/3wnLl8q" target="_blank">📍 mappa</a></small></p>
+<p class="giorno">Sabato <small class="silver">Sede Via Pomezia 12 <a href="https://bit.ly/3wnLl8q" target="_blank" title="Sede Via Pomezia 12">📍 mappa</a></small></p>
 
 * 🕚 <span>11.00 - 13.00</span> Lyrical Arab dance
 * 🕐 <span>13.00 - 14.30</span> Flamenco base coreografia Garrotin
@@ -152,6 +163,12 @@ alt="Ballerini di flamenco al Mosaico Danza" >}}
 * 🕓 <span>16.00 - 16.30</span> guida all'improvvisazione por buleria e tango
 * 🕟 <span>16.30 - 17.30</span> Flamenco intermedio coreografia Mariana
 {.orari7}
+
+<div class="mw6 pl4 fr">
+{{< figureh src="dancehall.webp"
+  caption="Allieve di dancehall e reggaeton"
+  alt="Allieve di dancehall e reggaeton" >}}
+</div>
 
 <p class="giorno">Stages mensili e corsi brevi di:</p>
 
