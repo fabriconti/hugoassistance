@@ -2,7 +2,7 @@
 author: Sabina Todaro
 category:
 - Orari Corsi 2021-2022
-date: 2022-05-23T17:49:22+01:00
+date: 2022-05-26T11:44:35+01:00
 featured_image: logo-il-mosaico-danza-asd.svg
 images:
 - logo-il-mosaico-danza-asd.svg
@@ -17,6 +17,7 @@ summary: >
  Flamenco, Lindy Hop, Balboa, ballo Liscio, Boogie Woogie, Rockabilly, Salsa,
  Reggaeton, Danza Classica, Danza Contemporanea, Lyrical Arab Dance, Dance
  Workout, Danza del ventre, Zumba.
+
 weight: 100
 tags:
   - baile flamenco

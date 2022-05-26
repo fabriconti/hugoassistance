@@ -3,16 +3,19 @@ author: Sabina Todaro
 category:
 - Orari Corsi 2021-2022
 date: 2022-05-24T12:27:44+01:00
-# featured_image: logo-il-mosaico-danza-asd.svg
-# images:
-# - logo-il-mosaico-danza-asd.svg
-# - Danza-e-vita.webp
-# - corsi-danza-bambini-ragazzi.webp
-# weight: 120
-# summary: >
-# <h2>Lezioni per ragazzi e bimbi</h2>
-# <h3>Zona Tibaldi Anno 2021/2022</h3>
-# NB: Gli orari potrebbero subire variazioni. Prima di partecipare a una lezione è assolutamente necessario che la prenoti via mail o per telefono. I corsi sono a numero chiuso. Si tengono dal lunedì al giovedì compresi, e riguardano diverse discipline, per offrire un ventaglio di possibilità per allenarsi, divertirsi, imparare nuove forme di ballo e movimento.
+featured_image: logo-il-mosaico-danza-asd.svg
+images:
+- logo-il-mosaico-danza-asd.svg
+- Danza-e-vita.webp
+- corsi-danza-bambini-ragazzi.webp
+weight: 120
+summary: >
+ <h2>Lezioni per ragazzi e bimbi</h2> <h3>Zona Tibaldi Anno 2021/2022</h3> NB:
+ Gli orari potrebbero subire variazioni. Prima di partecipare a una lezione è
+ assolutamente necessario che la prenoti via mail o per telefono. I corsi
+ sono a numero chiuso. Si tengono dal lunedì al giovedì compresi, e
+ riguardano diverse discipline, per offrire un ventaglio di possibilità per
+ allenarsi, divertirsi, imparare nuove forme di ballo e movimento.
 title: Corsi in zona Tibaldi
 url: /corsi-danza-moderna-zona-tibaldi/
 menuSection: oraricorsi

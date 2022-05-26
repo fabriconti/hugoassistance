@@ -5,12 +5,5 @@ url: /category/corsi-di-danza/
 layout: list-corsidanza
 menuSection: corsidanza
 ---
-vediamo
 
-<!-- {{ /* <p>questo è il body di /content/category/corsi-di-danza/_index.md
-
-	Utilizza layouts\taxonomy\list-corsidanza.html (per il titolo e la griglia)
-	Utilizza il template summary.html (i riquadri della griglia)
- */ }} -->
-
-
+I nostri corsi di danza
