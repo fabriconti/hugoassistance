@@ -4,7 +4,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Page.Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
-  {{ template "_internal/opengraph.html" . }}
+  <meta property="og:type" {{ if .Page.IsHome }} content="website" {{ else }} content="article" {{ end }} />
+  <meta property="og:title" content="{{ .Page.Title }}"/>
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+   <meta property="og:site_name" content="{{ .Site.Title }}"/>
+   <meta property="og:url" content="{{ .Page.Permalink }}"/>
+   <meta property="og:locale" content="{{ .Site.Language.Lang }}">
+  <meta property="article:published_time" content="{{ .Page.PublishDate }}" />
+   <meta property="article:modified_time" content="{{ .Page.Lastmod }}" />
+{{ if .Page.Params.featured_image }}
+<meta property="og:image" content="{{ .Page.Permalink }}{{ .Page.Params.featured_image  }}"/>
+<meta property="og:image:secure_url" content="{{ .Page.Permalink }}{{ .Page.Params.featured_image  }}"/>
+{{ end }}
+{{ if .Page.Params.images }}
+  {{ $permalink := .Page.Permalink }}
+  {{ range .Page.Params.images }}
+  {{ $img := . }}
+  <meta property="og:image" content="{{- $permalink -}}{{- $img -}}"/>
+  {{ end }}
+{{ end }}
   {{ template "_internal/schema.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
   {{/* {{ template "_internal/google_analytics_async.html" . }} */}}

@@ -2,7 +2,7 @@
 author: Sabina Todaro
 category:
 - Orari Corsi 2021-2022
-date: 2022-05-26T11:44:35+01:00
+date: 2022-05-26T13:18:26+01:00
 featured_image: logo-il-mosaico-danza-asd.svg
 images:
 - logo-il-mosaico-danza-asd.svg
