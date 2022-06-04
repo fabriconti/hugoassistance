@@ -9,6 +9,15 @@
 {{- $thumb := .Get "src" -}}
 {{- $src := .Get "src" -}}
 
+
+<!-- FINDME PROBLEM DISCOURSE  -->
+
+{{ $img:= $.Page.Resources.GetMatch  $src }}
+
+
+<!-- FINDME PROBLEM DISCOURSE  -->
+
+
 <!-- set unique ID depending on whether part of gallery or alone -->
 {{- $figid := "" -}}
 {{- $galid := "" -}}
@@ -33,7 +42,13 @@
   {{- $id = print "fig" $figid -}}
 {{- end -}}
 
+<!-- FINDME PROBLEM DISCOURSE -->
+
 <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
+  <h1> {{ $img.Width }} </h1>
+
+<!-- FINDME PROBLEM DISCOURSE -->
+
   <div class="snap-wrapper">
     {{ if (.Get "link") -}}
       <a href="{{ .Get "link" }}"

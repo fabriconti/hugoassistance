@@ -58,13 +58,6 @@ ORARI AGGIORNATI IL 17 MAGGIO 2022 - VALIDI FINO AL 30 GIUGNO 2022
 
 NB: Gli orari potrebbero subire variazioni. Prima di partecipare a una lezione di
 
-asasd
-asdasds
-
-asdasd
-
-asdasd
-
 
 prova è assolutamente necessario che la prenoti via mail o per telefono. I corsi sono a numero chiuso!
 
